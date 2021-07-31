@@ -36,7 +36,7 @@ namespace Market.Catalog.Api
 
             var databseSetting = new DatabaseSetting();
             _configuration.GetSection(nameof(DatabaseSetting)).Bind(databseSetting);
-            // databseSetting.ConnectionString = Environment.GetEnvironmentVariable("ConnectionString");
+            databseSetting.ConnectionString = Environment.GetEnvironmentVariable("ConnectionString");
             services.AddSingleton(databseSetting);
 
             services.AddSingleton<ICatalogDbContext, CatalogDbContext>();

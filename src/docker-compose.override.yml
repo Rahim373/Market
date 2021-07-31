@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  catalog-api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionString=mongodb://rahim373:Me.rahim29@catalogdb:27017
+    ports:
+      - "5000:80"
+  
+  catalogdb:
+    container_name: catalogdb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: rahim373
+      MONGO_INITDB_ROOT_PASSWORD: Me.rahim29
+      MONGO_INITDB_DATABASE: CatalogDb
+    volumes:
+      - type: volume
+        source: catalogdb-vol
+        target: /data/db
