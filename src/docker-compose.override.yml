@@ -2,12 +2,17 @@ version: '3.4'
 
 services:
   catalog-api:
+    container_name: catalog-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionString=mongodb://rahim373:Me.rahim29@catalogdb:27017
     ports:
       - "5000:80"
-  
+    volumes:
+      - type: volume
+        source: catalog-api-vol
+        target: /app
+
   catalogdb:
     container_name: catalogdb
     ports:

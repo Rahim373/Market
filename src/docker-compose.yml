@@ -11,4 +11,5 @@ services:
     image: mongo
 
 volumes:
+  catalog-api-vol:
   catalogdb-vol:
