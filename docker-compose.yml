@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  catalog-db:
+    container_name: catalog-db
+    image: mongo
+    ports:
+      - "27017:27017"
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: rahim373
+      MONGO_INITDB_ROOT_PASSWORD: Me.rahim29
+      MONGO_INITDB_DATABASE: CatalogDb
+    volumes:
+      - type: volume
+        source: catalog-db-vol
+        target: /etc/mongo
+volumes:
+  catalog-db-vol: {}
