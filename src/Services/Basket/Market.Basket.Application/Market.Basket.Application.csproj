@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Market.Common\Market.Common.csproj" />
+    <ProjectReference Include="..\Market.Basket.Data\Market.Basket.Data.csproj" />
+  </ItemGroup>
+
+</Project>

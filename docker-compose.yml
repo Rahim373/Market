@@ -1,18 +1,13 @@
 version: "3.9"
 services:
-  catalog-db:
-    container_name: catalog-db
-    image: mongo
+  basketdb:
+    container_name: basketdb
+    image: redis
     ports:
-      - "27017:27017"
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: rahim373
-      MONGO_INITDB_ROOT_PASSWORD: Me.rahim29
-      MONGO_INITDB_DATABASE: CatalogDb
+      - "6379:6379"
     volumes:
       - type: volume
-        source: catalog-db-vol
-        target: /etc/mongo
+        source: basketdb-vol
+        target: /data
 volumes:
-  catalog-db-vol: {}
+  basketdb-vol: {}

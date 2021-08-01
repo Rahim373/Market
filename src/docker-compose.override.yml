@@ -25,3 +25,23 @@ services:
       - type: volume
         source: catalogdb-vol
         target: /data/db
+  
+  basket-api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionString=basketdb:6379
+    ports:
+      - "5001:80"
+    volumes:
+      - type: volume
+        source: basket-api-vol
+        target: /app
+
+  basketdb:
+    container_name: basketdb
+    ports:
+      - "6379:6379"
+    volumes:
+      - type: volume
+        source: basketdb-vol
+        target: /data
